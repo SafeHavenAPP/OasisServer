@@ -24,5 +24,5 @@ app.use(cors());
 app.use(express.json());
 
 app.listen(PORT, () => {
-  console.log(`Port start on: ${PORT}`)
+  console.log(`Port started on: ${PORT}`)
 });
