@@ -1,19 +1,22 @@
+
 const supertest = require('supertest');
 const mongoose = require('mongoose');
+const locationRouter = require('../../routes/locationRoutes')
 
-const Location = require('../../models/location/location.js');
-
+// app.use('/', locationRouter)
 const { server } = require('../../app.js')
 const request = supertest(server);
 
 
-beforeAll( async() => {
-  const url = `mongodb://127.0.0.1/locations`;
-  await mongoose.connect(url, { useNewUrlParser: true })
-});
+// beforeAll( async() => {
+//   const url = `mongodb://127.0.0.1/locations`;
+//   await mongoose.connect(url, { useNewUrlParser: true })
+// });
 
 describe('Testing CRUD capabilities of Location', () => {
- xtest('Can Create a Location on /location route', async () => {
+  // jest.setTimeout(60000)
+
+  test('Can Create a Location on /location route', async () => {
 
     let response = await request.post('/locations').send({
       locationName: 'test name',
@@ -22,8 +25,9 @@ describe('Testing CRUD capabilities of Location', () => {
       username: 'test username'
     })
 
-    expect(response.status).toEqual(200);
+
     console.log(response)
-  })
+    expect(response.status).toEqual(200);
+  }, 60000)
 
 })
