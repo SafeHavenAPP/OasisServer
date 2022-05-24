@@ -1,5 +1,5 @@
 const mockingoose = require('mockingoose');
-const Note = require('../models/notes/notes.js');
+const Note = require('../../models/notes/notes.js');
 
 
 beforeEach(() => {

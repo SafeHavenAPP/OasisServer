@@ -1,5 +1,5 @@
 const mockingoose = require('mockingoose');
-const Location = require('../models/location/location');
+const Location = require('../../models/location/location');
 
 
 beforeEach(() => {

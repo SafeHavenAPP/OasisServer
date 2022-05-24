@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose --coverage --watchAll",
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/SafeHavenAPP/OasisServer#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
@@ -26,6 +28,7 @@
     "jsonwebtoken": "^8.5.1",
     "mockingoose": "^2.15.2",
     "mongodb": "^4.6.0",
-    "mongoose": "^6.3.4"
+    "mongoose": "^6.3.4",
+    "supertest": "^6.2.3"
   }
 }

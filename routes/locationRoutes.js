@@ -26,11 +26,11 @@ async function getAllLocations(request, response) {
 }
 
 async function createLocation (request, response){
+  console.log('some string');
   try{
-  
     const newLocation = await Location.create({ ...request.body});
-    response.status(200).send(newLocation);
     console.log(newLocation);
+    response.status(200).send(newLocation);
   }catch(e){
     console.error(e);
     response.status(500).send('server error cannot access');
