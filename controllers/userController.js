@@ -1,9 +1,8 @@
 'use strict';
 
-const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const User = mongoose.model('Users');
+const User = require('../models/user/user.js')
 
 exports.register = function(request, response) {
   let newUser = new User(request.body);
@@ -16,6 +15,7 @@ exports.register = function(request, response) {
       return response.json(user);
     }
   });
+
 };
 
 exports.sign_in = function(request, response) {
