@@ -29,9 +29,9 @@ app.use(notesRouter);
 
 
 module.exports = {server: app,
-start: (PORT) => {
-  if(!PORT) { throw new Error('Port Not Available')}
-  app.listen(PORT, () => {
-    console.log(`Port started on: ${PORT}`);
-  });
-}}
+  start: (PORT) => {
+    if(!PORT) { throw new Error('Port Not Available');}
+    app.listen(PORT, () => {
+      console.log(`Port started on: ${PORT}`);
+    });
+  }};

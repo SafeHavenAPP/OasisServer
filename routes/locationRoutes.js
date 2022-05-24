@@ -26,7 +26,7 @@ async function getAllLocations(request, response) {
 }
 
 async function createLocation (request, response){
-  console.log('some string')
+  console.log('some string');
   try{
     const newLocation = await Location.create({ ...request.body});
     console.log(newLocation);
