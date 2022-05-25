@@ -44,7 +44,7 @@ jest.mock("../../models/location/location", () => {
 });
 
 describe("Testing CRUD capabilities of Location", () => {
-  test("Can Create a Location on /location route", async () => {
+  test("Should be able to create a location on `createLocation` function", async () => {
     let response = await request.post("/locations").send({
       locationName: "test name",
       address: "test address",
@@ -97,8 +97,6 @@ describe("Testing CRUD capabilities of Location", () => {
       locationName: "Some Place",
       id: 1235679
     });
-
-    console.log(response)
 
     expect(response.status).toEqual(200);
   })
