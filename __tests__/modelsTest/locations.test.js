@@ -8,24 +8,24 @@ beforeEach(() => {
 
 
 
-describe("Test mongoose notes model", () => {
+describe('Test mongoose notes model', () => {
   test('should create a note instance  ', async () =>{
     
     mockingoose(Location).toReturn({
       locationName: 'testName',
       address: 'test address',
       status: 'test status',
-      username: 'username'
+      username: 'username',
     }, 'save');
     const location = new Location({
       locationName: 'testName',
       address: 'test address',
       status: 'test status',
-      username: 'username'
+      username: 'username',
     });
-     location.save();
+    location.save();
 
-    expect(location.locationName).toEqual('testName')
+    expect(location.locationName).toEqual('testName');
     console.log(location);
-  })
-})
+  });
+});
