@@ -20,6 +20,5 @@ describe("Test mongoose notes model", () => {
 
     expect(note.noteName).toEqual('testName')
     expect(note.review).toEqual('testReview')
-    console.log(note);
   })
 })

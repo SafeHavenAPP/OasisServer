@@ -1,6 +1,5 @@
 'use strict';
 const express = require('express');
-const mongoose = require('mongoose');
 const Note = require('../models/notes/notes.js');
 
 const router = express.Router();
@@ -17,7 +16,6 @@ async function getAllNotes(request, response) {
     let allNotes = {};
     let results = await Note.find(allNotes);
     response.status(200).send(results);
-    console.log(results);
   }catch(e){
     console.error(e);
     response.status(500).send('server error cannot access');
@@ -25,14 +23,16 @@ async function getAllNotes(request, response) {
 }
 
 async function createNote (request, response){
-  try{
-  
-    const newNote = await Note.create({ ...request.body});
-    response.status(200).send(newNote);
-    console.log(newNote);
-  }catch(e){
-    console.error(e);
-    response.status(500).send('server error cannot access');
+  if (typeof request.body.noteName === 'string' && typeof request.body.review === 'string'){
+    try{
+      const newNote = await Note.create({ ...request.body});
+      response.status(200).send(newNote);
+    }catch(e){
+      console.error(e);
+      response.status(500).send('server error cannot access');
+    }
+  } else {
+    response.status(400).send('Invalid Request');
   }
 }
 
@@ -41,7 +41,6 @@ async function getOneNote(request, response) {
     let id = request.params.id;
     let results = await Note.findById(id);
     response.status(200).send(results);
-    console.log(results);
   }catch(e){
     console.error(e);
     response.status(500).send('server error cannot access');
@@ -65,7 +64,6 @@ async function deleteNote(request, response) {
     let id = request.params.id;
     let results = await Note.findByIdAndDelete(id);
     response.status(200).send(results);
-    console.log(results);
   }catch(e){
     console.error(e);
     response.status(500).send('server error cannot access');

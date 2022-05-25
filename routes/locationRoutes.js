@@ -18,7 +18,6 @@ async function getAllLocations(request, response) {
     let allLocations = {};
     let results = await Location.find(allLocations);
     response.status(200).send(results);
-    console.log(results);
   }catch(e){
     console.error(e);
     response.status(500).send('server error cannot access');
@@ -29,7 +28,6 @@ async function createLocation (request, response){
   if (typeof request.body.locationName === 'string' && typeof request.body.address === 'string') {
     try{
       const newLocation = await Location.create({ ...request.body});
-      console.log(newLocation);
       response.status(200).send(newLocation);
     }catch(e){
       console.error(e);
@@ -45,7 +43,6 @@ async function getOneLocation(request, response) {
     let id = request.params.id;
     let results = await Location.findById(id);
     response.status(200).send(results);
-    console.log(results);
   }catch(e){
     console.error(e);
     response.status(500).send('server error cannot access');
@@ -69,7 +66,6 @@ async function deleteLocation(request, response) {
     let id = request.params.id;
     let results = await Location.findByIdAndDelete(id);
     response.status(200).send(results);
-    console.log(results);
   }catch(e){
     console.error(e);
     response.status(500).send('server error cannot access');
