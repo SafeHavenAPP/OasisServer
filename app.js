@@ -26,6 +26,7 @@ app.get('/', (request, response, next) => {
 
 app.get('/v3/businesses/search', yelpRoutes.getAllLocations);
 
+
 app.use(function (request, response, next) {
   if (
     request.headers &&
