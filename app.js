@@ -52,6 +52,8 @@ app.use(notesRouter);
 
 routes(app);
 
+console.log('TESTING SERVER APPLICATION')
+
 module.exports = {
   server: app,
   start: (PORT) => {
