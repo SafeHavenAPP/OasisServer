@@ -7,6 +7,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 
+const yelpRoutes = require('./routes/yelpRoutes.js')
 const locationsRouter = require('./routes/locationRoutes');
 const notesRouter = require('./routes/noteRoutes');
 const routes = require('./routes/userRoutes.js');
@@ -22,6 +23,8 @@ app.get('/', (request, response, next) => {
   response.status(200).send('Welcome to the Oasis');
   console.log('Welcome to the Oasis');
 });
+
+app.get('/v3/businesses/search', yelpRoutes.getAllLocations);
 
 app.use(function (request, response, next) {
   if (
