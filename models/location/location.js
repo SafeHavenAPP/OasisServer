@@ -9,6 +9,8 @@ const locationSchema = new Schema({
   address: {type: String, required: true},
   status: {type: String, required: false},
   username: {type: String, required: false},
+  userID: {type: String, required: true},
+  notes: {type: String, required: false}
 });
 
 const LocationModel = mongoose.model('Locations', locationSchema);

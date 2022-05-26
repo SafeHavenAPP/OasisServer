@@ -1,12 +1,9 @@
 const mockingoose = require('mockingoose');
 const Note = require('../../models/notes/notes.js');
 
-
 beforeEach(() => {
   mockingoose.resetAll();
 });
-
-
 
 describe("Test mongoose notes model", () => {
   test('should create a note instance  ', async () =>{
