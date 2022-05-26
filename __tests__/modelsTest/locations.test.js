@@ -26,6 +26,5 @@ describe('Test mongoose notes model', () => {
     location.save();
 
     expect(location.locationName).toEqual('testName');
-    console.log(location);
   });
 });
