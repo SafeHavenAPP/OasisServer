@@ -11,14 +11,14 @@ exports.register = async function (request, response) {
     }).exec();
     if (
       doesUserExist !== null &&
-      doesUserExist.username.toLowerCase() ===
-      request.body.username.toLowerCase()
+      doesUserExist.username ===
+      request.body.username
     ) {
       return response.status(400).send("User Already Exists, Please Try Again");
     } else if (
       doesUserExist === null ||
-      doesUserExist.username.toLowerCase() !==
-        request.body.username.toLowerCase()
+      doesUserExist.username !==
+        request.body.username
     ) {
       let newUser = new User(request.body);
       newUser.hash_password = bcrypt.hashSync(request.body.password, 10);
