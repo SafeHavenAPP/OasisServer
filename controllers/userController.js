@@ -14,7 +14,7 @@ exports.register = async function (request, response) {
       doesUserExist.username ===
       request.body.username
     ) {
-      return response.status(400).send("User Already Exists, Please Try Again");
+      return response.status(400).send({ message: "User Already Exists, Please Try Again" });
     } else if (
       doesUserExist === null ||
       doesUserExist.username !==
