@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const mongoose = require('mongoose');
+const loginRequired = require('../controllers/userController.js')
 
 const Location = require('../models/location/location.js');
 
@@ -9,9 +9,9 @@ const router = express.Router();
 
 router.get('/locations', getAllLocations);
 router.get('/locations/:id', getOneLocation);
-router.delete('/locations/:id', deleteLocation);
-router.post('/locations', createLocation);
-router.put('/locations/:id', updateLocation);
+router.delete('/locations/:id', loginRequired, deleteLocation);
+router.post('/locations', loginRequired, createLocation);
+router.put('/locations/:id', loginRequired, updateLocation);
 
 async function getAllLocations(request, response) {
   try{
