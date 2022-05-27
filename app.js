@@ -1,5 +1,7 @@
 'use strict';
 
+// The yelp code is commented out, but left in so that we may come back to this part of the scope at a later date
+
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -7,7 +9,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 
-const yelpRoutes = require('./routes/yelpRoutes.js')
+// const yelpRoutes = require('./routes/yelpRoutes.js')
 const locationsRouter = require('./routes/locationRoutes');
 const notesRouter = require('./routes/noteRoutes');
 const routes = require('./routes/userRoutes.js');
@@ -24,7 +26,7 @@ app.get('/', (request, response, next) => {
   console.log('Welcome to the Oasis');
 });
 
-app.get('/v3/businesses/search', yelpRoutes.getAllLocations);
+// app.get('/v3/businesses/search', yelpRoutes.getAllLocations);
 
 
 app.use(function (request, response, next) {
@@ -52,8 +54,6 @@ app.use(locationsRouter);
 app.use(notesRouter);
 
 routes(app);
-
-console.log('TESTING SERVER APPLICATION')
 
 module.exports = {
   server: app,

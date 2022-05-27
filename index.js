@@ -10,7 +10,7 @@ db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', () => {
   console.log('Mongoose is Connected');
   server.start(PORT);
-})
+});
 
 
 module.exports = db;

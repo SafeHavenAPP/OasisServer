@@ -5,17 +5,17 @@ beforeEach(() => {
   mockingoose.resetAll();
 });
 
-describe("Test mongoose notes model", () => {
+describe('Test mongoose notes model', () => {
   test('should create a note instance  ', async () =>{
     
-    mockingoose(Note).toReturn({ noteName: 'name1', review: "Test"}, 'save');
+    mockingoose(Note).toReturn({ noteName: 'name1', review: 'Test'}, 'save');
     const note = new Note({
       noteName: 'testName',
-      review: 'testReview'
+      review: 'testReview',
     });
-     note.save();
+    note.save();
 
-    expect(note.noteName).toEqual('testName')
-    expect(note.review).toEqual('testReview')
-  })
-})
+    expect(note.noteName).toEqual('testName');
+    expect(note.review).toEqual('testReview');
+  });
+});
