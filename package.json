@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose --coverage --watchAll",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,19 @@
   "bugs": {
     "url": "https://github.com/SafeHavenAPP/OasisServer/issues"
   },
-  "homepage": "https://github.com/SafeHavenAPP/OasisServer#readme"
+  "homepage": "https://github.com/SafeHavenAPP/OasisServer#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jest": "^28.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mockingoose": "^2.15.2",
+    "mongodb": "^4.6.0",
+    "mongoose": "^6.3.4",
+    "supertest": "^6.2.3"
+  }
 }
