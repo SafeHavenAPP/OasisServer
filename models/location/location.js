@@ -10,7 +10,7 @@ const locationSchema = new Schema({
   status: {type: String, required: false},
   username: {type: String, required: false},
   userID: {type: String, required: true},
-  notes: {type: String, required: false}
+  notes: {type: String, required: false},
 });
 
 const LocationModel = mongoose.model('Locations', locationSchema);
